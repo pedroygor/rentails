@@ -1,4 +1,4 @@
-import { Category } from "../model/Category";
+import { Category } from "../cars/model/Category";
 
 export interface ICategoryRepositories {
   create({ name, description }: ICategoryCreateDTO): Category,

@@ -1,7 +1,6 @@
 import { v4 as uuidV4 } from 'uuid';
-import ICategory from '../interfaces/ICategory';
 
-class Category {
+class Specification {
   id?: string;
   name: string;
   description: string;
@@ -16,7 +15,6 @@ class Category {
     this.description = description;
     this.createdAt = createdAt;
   }
- 
-}
+} 
 
-export { Category };
+export { Specification };
