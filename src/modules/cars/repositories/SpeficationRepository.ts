@@ -3,7 +3,7 @@ import { Specification } from "../model/Specification";
 
 class SpecificationRepository implements ISpecificationRepository{
   private specifications: Specification[];
-  
+
   private static INSTANCE: SpecificationRepository;
 
   private constructor() {
@@ -18,17 +18,21 @@ class SpecificationRepository implements ISpecificationRepository{
     return SpecificationRepository.INSTANCE;
   }
 
-  findByName(name: string): Specification | undefined {
-    const specification = this.specifications.find((specification) => specification.name === name);
-    return specification;
-  }
-
   create({ name, description }: ICreateSpecificationDTO): Specification {
     const createAt = new Date();
     const specification = new Specification(name, description, createAt);
 
     this.specifications.push(specification);
 
+    return specification;
+  }
+
+  getAll(): Specification[] {
+    return this.specifications;
+  }
+
+  findByName(name: string): Specification | undefined {
+    const specification = this.specifications.find((specification) => specification.name === name);
     return specification;
   }
 
