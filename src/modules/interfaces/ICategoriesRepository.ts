@@ -1,6 +1,6 @@
 import { Category } from "../cars/model/Category";
 
-export interface ICategoryRepositories {
+export interface ICategoriesRepository {
   create({ name, description }: ICategoryCreateDTO): Category,
   getAll(): Category[]
   findByName(name: string): Category | null,
