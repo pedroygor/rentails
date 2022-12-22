@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { SpecificationRepository } from "../modules/cars/repositories/SpeficationRepository";
+import { SpecificationRepository } from "../modules/cars/repositories/SpecificationRepository";
 import { createSpecificationController } from "../modules/cars/useCases/createSpecification";
 import { getAllSpecificationController } from "../modules/cars/useCases/getAllSpecifications";
 
