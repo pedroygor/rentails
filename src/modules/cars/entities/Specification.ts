@@ -1,10 +1,20 @@
-import { v4 as uuidV4 } from 'uuid';
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { v4 as uuidV4 } from "uuid";
 
+@Entity('specifications')
 class Specification {
+
+  @PrimaryColumn()
   id?: string;
+
+  @Column()
   name: string;
+
+  @Column()
   description: string;
-  createdAt: Date;
+
+  @CreateDateColumn()
+  created_at: Date;
 
   constructor( name: string, description: string, createdAt: Date, id?: string) {
     if(!this.id) {
@@ -13,7 +23,7 @@ class Specification {
     this.id = uuidV4();
     this.name = name;
     this.description = description;
-    this.createdAt = createdAt;
+    this.created_at = createdAt;
   }
 } 
 
