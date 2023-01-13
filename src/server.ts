@@ -12,8 +12,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
 app.use(router);
 
 app.listen(2222, () => console.log('Server is running'));
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
